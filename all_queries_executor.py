@@ -25,6 +25,8 @@ def execute_sql_queries_for_all_cases():
             print(f"Consulta {case_name} terminada en {int(total_time/60)}:{total_time%60:.2f}")
             
             save_result_to_excel(data, case_name)
+        else:
+            print(f"Consulta {case_name} ya realizada anteriormente.")
     
     close_connection(conn)
 
