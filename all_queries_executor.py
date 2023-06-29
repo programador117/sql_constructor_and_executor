@@ -13,15 +13,18 @@ def execute_sql_queries_for_all_cases():
     for file_path in txt_files:
         case_name = os.path.basename(file_path)[:-4]
         
-        start_time = time.time()
-        query = read_from_file(file_path)
-        data = execute_query(conn, query)
-        end_time = time.time()
-        total_time = end_time - start_time
+        expected_result = os.path.join('resultado_consultas', f'F130_{case_name}.xlsx')
         
-        print(f"Consulta {case_name} terminada en {int(total_time/60)}:{total_time%60:.2f}")
-        
-        save_result_to_excel(data, case_name)
+        if not os.path.exists(expected_result):
+            start_time = time.time()
+            query = read_from_file(file_path)
+            data = execute_query(conn, query)
+            end_time = time.time()
+            total_time = end_time - start_time
+            
+            print(f"Consulta {case_name} terminada en {int(total_time/60)}:{total_time%60:.2f}")
+            
+            save_result_to_excel(data, case_name)
     
     close_connection(conn)
 
