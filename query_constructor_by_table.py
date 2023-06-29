@@ -2,7 +2,7 @@ import os
 
 from file_manager import find_files, save_to_file
 from data_extractor import extract_data_from_excel
-from sql_constructor import construct_sql_query
+from query_constructor import construct_sql_query
 
 def process_case(file_path):
     case_name = os.path.basename(os.path.dirname(file_path))
