@@ -9,7 +9,7 @@ def execute_sql_queries_for_all_cases():
     conn = create_connection(connection_data)
     
     folder_path = 'consultas_resultantes'
-    txt_files = find_files(folder_path, '', '.txt')
+    txt_files = find_files(folder_path, None, '.txt')
     for file_path in txt_files:
         case_name = os.path.basename(file_path)[:-4]
         
