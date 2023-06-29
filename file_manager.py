@@ -2,7 +2,6 @@ import os
 
 def find_files(folder_path, file_name, file_extension):
     files = []
-    i = 1
     for subfolder in os.listdir(folder_path):
         subfolder_path = os.path.join(folder_path, subfolder)
         if os.path.isdir(subfolder_path):
