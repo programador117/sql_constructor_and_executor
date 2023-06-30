@@ -38,4 +38,4 @@ def merge_results_and_save():
     merged_results_renamed["FINI"] = merged_results_renamed["FINI"].apply(lambda d: format_date(d))
     
     merged_results_filtered = drop_dataframe_columns_except(merged_results_renamed, excepted_columns = new_column_names)
-    save_result_to_excel(merged_results_filtered, "Todos")
+    save_result_to_excel(merged_results_filtered, "Todos", folder = 'resultado_final_consultas')
