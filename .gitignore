@@ -2,6 +2,7 @@ casos
 consultas_resultantes
 resultado_consultas
 diccionario_conversion_columnas
+resultado_final_consultas
 datos_conexion.txt
 *cache*
 *.venv

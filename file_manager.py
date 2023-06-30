@@ -61,6 +61,6 @@ def save_to_file(file_path, content):
     with open(file_path, 'w') as f:
         f.write(content)
 
-def save_result_to_excel(data, case_name):
-    file_path = os.path.join('resultado_consultas', f'F130_{case_name}.xlsx')
+def save_result_to_excel(data, case_name, folder = 'resultado_consultas'):
+    file_path = os.path.join(folder, f'F130_{case_name}.xlsx')
     data.to_excel(file_path, index=False)
