@@ -35,6 +35,18 @@ def read_dataframe_from_excel(file_path):
     content = pd.read_excel(file_path, header = 0)
     return content
 
+def read_columns_dict_dataframe():
+    dict_column_names_dataframe = None
+    
+    folder_path = 'diccionario_conversion_columnas'
+    column_names_files = find_files(folder_path, None, '.xlsx')
+    column_names_file = column_names_files[0] if column_names_files is not None and len (column_names_files) > 0 else None
+    
+    if column_names_file is not None:
+        dict_column_names_dataframe = read_dataframe_from_excel(column_names_file)
+    
+    return dict_column_names_dataframe
+
 def read_connection_data(file_path):
     with open(file_path, 'r') as f:
         data = f.read().splitlines()
