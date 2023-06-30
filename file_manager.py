@@ -31,6 +31,10 @@ def read_from_file(file_path):
         content = f.read()
     return content
 
+def read_dataframe_from_excel(file_path):
+    content = pd.read_excel(file_path, header = 0)
+    return content
+
 def read_connection_data(file_path):
     with open(file_path, 'r') as f:
         data = f.read().splitlines()
